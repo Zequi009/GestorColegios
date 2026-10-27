@@ -1,0 +1,31 @@
+{
+  "name": "gestorcolegios",
+  "version": "1.0.1",
+  "description": "Sistema de Gestion de Colegios",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "keywords": [],
+  "author": "Z3K1",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "electron": "^43.0.0",
+    "electron-builder": "^26.15.3"
+  },
+  "dependencies": {
+    "msnodesqlv8": "^5.2.1",
+    "mssql": "^12.7.0"
+  },
+  "build":{
+    "appId":"ar.edu.ceri.dijini",
+    "productName":"Dijini",
+    "win": {
+      "target":"nsis",
+      "icon":"renderer/assets/icons/icon.ico"
+    }
+  }
+  
+}

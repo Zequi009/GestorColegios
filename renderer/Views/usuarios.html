@@ -1,0 +1,230 @@
+<section class="view">
+
+    <div class="view-header view-header-actions">
+        <div>
+            <h2>Usuarios</h2>
+            <p>Consulta y gestión de usuarios registrados.</p>
+        </div>
+
+        <button class="primary-button" id="btnAgregarUsuario">
+            + Agregar usuario
+        </button>
+    </div>
+
+    <!-- =====
+     BARRA DE BUSQUEDA
+     ===== -->
+    <div class="view-toolbar">
+        <input
+            type="text"
+            id="buscarUsuario"
+            placeholder="Buscar por DNI, nombre, apellido, correo, tipo o colegio..."
+        >
+    </div>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>DNI</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Correo alternativo</th>
+                    <th>Tipo de usuario</th>
+                    <th>Colegio</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+
+            <tbody id="tablaUsuarios">
+                <tr>
+                    <td colspan="7" class="empty-table">
+                        Todavía no hay datos cargados.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- ======== CAPA OSCURA DEL PANEL ======== -->
+    <div id="panelUsuarioOverlay" class="side-panel-overlay"></div>
+
+    <!-- ======== PANEL LATERAL ======== -->
+    <aside id="panelUsuario" class="side-panel">
+
+        <div class="side-panel-header">
+            <div>
+                <h3 id="panelUsuarioTitulo">
+                    Editar usuario
+                </h3>
+
+                <p id="panelUsuarioTexto"></p>
+            </div>
+
+            <button
+                id="btnCerrarPanelUsuario"
+                class="side-panel-close"
+                type="button"
+                aria-label="Cerrar panel"
+            >
+                ✕
+            </button>
+        </div>
+
+        <form id="formUsuario" class="side-panel-form" novalidate>
+
+            <div class="form-field">
+                <label for="usuarioDni">DNI</label>
+
+                <input
+                    id="usuarioDni"
+                    name="dni"
+                    type="text"
+                    inputmode="numeric"
+                    pattern="[0-9]+"
+                    autocomplete="off"
+                >
+
+                <small
+                    id="usuarioDniAyuda"
+                    class="form-help"
+                ></small>
+            </div>
+
+            <div class="form-field">
+                <label for="usuarioNombre">Nombre</label>
+
+                <input
+                    id="usuarioNombre"
+                    name="nombre"
+                    type="text"
+                    maxlength="50"
+                    autocomplete="off"
+                    required
+                >
+            </div>
+
+            <div class="form-field">
+                <label for="usuarioApellido">Apellido</label>
+
+                <input
+                    id="usuarioApellido"
+                    name="apellido"
+                    type="text"
+                    maxlength="50"
+                    autocomplete="off"
+                    required
+                >
+            </div>
+
+            <div class="form-field">
+                <label for="usuarioCorreo">
+                    Correo alternativo
+                </label>
+
+                <input
+                    id="usuarioCorreo"
+                    name="correo"
+                    type="email"
+                    maxlength="100"
+                    autocomplete="off"
+                >
+            </div>
+
+            <div class="form-field">
+                <label for="usuarioTipo">
+                    Tipo de usuario
+                </label>
+
+                <select
+                    id="usuarioTipo"
+                    name="tipoUsuario"
+                >
+                    <option value="">
+                        Seleccionar...
+                    </option>
+
+                    <option value="ESTUDIANTE">
+                        Estudiante
+                    </option>
+
+                    <option value="DOCENTE">
+                        Docente
+                    </option>
+                </select>
+            </div>
+
+            <div class="form-field">
+                <label for="usuarioColegio">
+                    Colegio
+                </label>
+
+                <select
+                    id="usuarioColegio"
+                    name="colegio"
+                >
+                    <option value="">
+                        Sin colegio
+                    </option>
+                </select>
+            </div>
+
+            <div class="side-panel-actions">
+
+                <button
+                    id="btnCancelarPanelUsuario"
+                    class="secondary-button"
+                    type="button"
+                >
+                    Cancelar
+                </button>
+
+                <button
+                    class="primary-button"
+                    type="submit"
+                >
+                    Guardar
+                </button>
+
+            </div>
+
+        </form>
+
+    </aside>
+    <div id="modalConfirmacionOverlay" class="modal-overlay"></div>
+
+<div id="modalConfirmacion" class="modal-confirmacion">
+    <div class="modal-contenido">
+
+        <h3 id="modalConfirmacionTitulo">
+            Confirmar acción
+        </h3>
+
+        <p id="modalConfirmacionTexto">
+            ¿Estás seguro de que querés continuar?
+        </p>
+
+        <div class="modal-acciones">
+
+            <button
+                id="btnCancelarConfirmacion"
+                class="secondary-button"
+                type="button"
+            >
+                Cancelar
+            </button>
+
+            <button
+                id="btnAceptarConfirmacion"
+                class="danger-button"
+                type="button"
+            >
+                Confirmar
+            </button>
+
+        </div>
+
+    </div>
+</div>
+
+</section>

@@ -1,0 +1,121 @@
+<section class="view">
+
+    <div class="view-header">
+        <div>
+            <h2>Dashboard</h2>
+            <p>Resumen general del sistema.</p>
+        </div>
+    </div>
+
+    <div class="dashboard-summary">
+
+        <div class="dashboard-card">
+            <h3>Colegios</h3>
+
+            <div class="dashboard-total">
+                <strong id="totalColegios">---</strong>
+                <span>colegios registrados</span>
+            </div>
+        </div>
+        <div class="dashboard-card">
+            <h3>Usuarios</h3>
+
+            <div class="dashboard-chart-container">
+
+                <div class="dashboard-chart" id="graficoUsuarios">
+                    <div class="dashboard-chart-center">
+                        <strong id="totalUsuarios">---</strong>
+                        <span>Total</span>
+                    </div>
+                </div>
+
+                <div class="dashboard-chart-legend">
+                    <div>
+                        <span class="dashboard-chart-indicator primary"></span>
+                        <span>Docentes</span>
+                        <strong id="totalDocentes">---</strong>
+                    </div>
+
+                    <div>
+                        <span class="dashboard-chart-indicator secondary"></span>
+                        <span>Estudiantes</span>
+                        <strong id="totalEstudiantes">---</strong>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="dashboard-card">
+            <h3>Workspace</h3>
+
+            <div class="dashboard-chart-container">
+
+                <div class="dashboard-chart" id="graficoWorkspace">
+                    <div class="dashboard-chart-center">
+                        <strong id="porcentajeWorkspace">---</strong>
+                        <span>cobertura</span>
+                    </div>
+                </div>
+
+                <div class="dashboard-chart-legend">
+                    <div>
+                        <span class="dashboard-chart-indicator workspace-active"></span>
+                        <span>Con cuenta</span>
+                        <strong id="totalConWorkspace">---</strong>
+                    </div>
+
+                    <div>
+                        <span class="dashboard-chart-indicator workspace-inactive"></span>
+                        <span>Pendiente</span>
+                        <strong id="totalPendienteWorkspace">---</strong>
+                    </div>
+
+                    <div>
+                        <span class="dashboard-chart-indicator workspace-disabled"></span>
+                        <span>Dado de Baja</span>
+                        <strong id="totalBajaWorkspace">---</strong>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="dashboard-activity">
+
+        <div class="dashboard-activity-header">
+            <div>
+                <h3>Actividad reciente</h3>
+                <p>Últimos cambios registrados en Dijini.</p>
+            </div>
+
+            <button id="btnVerHistorial" class="secondary-button" type="button">
+                Ver historial →
+            </button>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Tabla</th>
+                        <th>Operación</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tablaActividadReciente">
+                    <tr>
+                        <td colspan="4" class="empty-table">
+                            Cargando actividad...
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</section>

@@ -1,0 +1,176 @@
+<section class="view">
+
+    <div class="view-header view-header-actions">
+        <div>
+            <h2>Correos CERI</h2>
+            <p>Consulta y gestión de correos institucionales.</p>
+        </div>
+
+        <button class="primary-button" id="btnAgregarCorreo">
+            + Agregar correo
+        </button>
+    </div>
+
+    <!-- ===== BARRA DE BUSQUEDA ===== -->
+    <div class="view-toolbar">
+        <input type="text" id="buscarCorreo"
+            placeholder="Buscar por nombre, apellido, colegio, tipo de usuario o correo...">
+    </div>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Colegio</th>
+                    <th>Tipo de usuario</th>
+                    <th>Dirección de Correo</th>
+                    <th>Fecha de Alta</th>
+                    <th>Fecha de Baja</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+
+            <tbody id="tablaWorkspace">
+                <tr>
+                    <td colspan="8" class="empty-table">
+                        Todavía no hay datos cargados.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- ======== CAPA OSCURA DEL PANEL ======== -->
+    <div id="panelWorkspaceOverlay" class="side-panel-overlay"></div>
+
+    <!-- ======== PANEL LATERAL ======== -->
+    <aside id="panelWorkspace" class="side-panel">
+
+        <div class="side-panel-header">
+            <div>
+                <h3 id="panelWorkspaceTitulo">Agregar correo Workspace</h3>
+
+                <p id="panelWorkspaceTexto"></p>
+            </div>
+
+            <button id="btnCerrarPanelWorkspace" class="side-panel-close" type="button" aria-label="Cerrar panel">
+                ✕
+            </button>
+        </div>
+
+        <form id="formWorkspace" class="side-panel-form" novalidate>
+
+            <div class="form-field">
+                <label for="workspaceTipoEntidad">
+                    Asociar a
+                </label>
+
+                <select id="workspaceTipoEntidad" name="tipoEntidad">
+                    <option value="">
+                        Seleccionar...
+                    </option>
+
+                    <option value="usuario">
+                        Usuario
+                    </option>
+
+                    <option value="colegio">
+                        Colegio
+                    </option>
+                </select>
+            </div>
+
+            <div class="form-field" id="campoWorkspaceUsuario" hidden>
+                <label for="workspaceUsuario">
+                    Usuario
+                </label>
+
+                <select id="workspaceUsuario" name="usuario">
+                    <option value="">
+                        Seleccionar usuario...
+                    </option>
+                </select>
+            </div>
+
+            <div class="form-field" id="campoWorkspaceColegio" hidden>
+                <label for="workspaceColegio">
+                    Colegio
+                </label>
+
+                <select id="workspaceColegio" name="colegio">
+                    <option value="">
+                        Seleccionar colegio...
+                    </option>
+                </select>
+            </div>
+
+            <div class="form-field">
+                <label for="workspaceCorreo">
+                    Dirección de correo
+                </label>
+
+                <input id="workspaceCorreo" name="correo" type="email" maxlength="100" autocomplete="off">
+            </div>
+
+            <div class="form-field">
+                <label for="workspaceFechaAlta">
+                    Fecha de alta
+                </label>
+
+                <input id="workspaceFechaAlta" name="fechaAlta" type="date">
+            </div>
+
+            <div class="form-field">
+                <label for="workspaceFechaBaja">
+                    Fecha de baja
+                </label>
+
+                <input id="workspaceFechaBaja" name="fechaBaja" type="date">
+            </div>
+
+            <div class="side-panel-actions">
+
+                <button id="btnCancelarPanelWorkspace" class="secondary-button" type="button">
+                    Cancelar
+                </button>
+
+                <button class="primary-button" type="submit">
+                    Guardar
+                </button>
+
+            </div>
+
+        </form>
+
+    </aside>
+    <div id="modalConfirmacionOverlay" class="modal-overlay"></div>
+
+    <div id="modalConfirmacion" class="modal-confirmacion">
+        <div class="modal-contenido">
+
+            <h3 id="modalConfirmacionTitulo">
+                Confirmar acción
+            </h3>
+
+            <p id="modalConfirmacionTexto">
+                ¿Estás seguro de que querés continuar?
+            </p>
+
+            <div class="modal-acciones">
+
+                <button id="btnCancelarConfirmacion" class="secondary-button" type="button">
+                    Cancelar
+                </button>
+
+                <button id="btnAceptarConfirmacion" class="danger-button" type="button">
+                    Confirmar
+                </button>
+
+            </div>
+
+        </div>
+    </div>
+
+</section>

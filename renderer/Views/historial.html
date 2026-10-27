@@ -1,0 +1,41 @@
+<section class="view">
+
+    <div class="view-header">
+        <div>
+            <h2>Historial</h2>
+            <p>Consulta de cambios registrados en la base de datos.</p>
+        </div>
+    </div>
+
+    <!-- ===== BARRA DE BUSQUEDA ===== -->
+    <div class="view-toolbar">
+        <input
+            type="text"
+            id="buscarHistorial"
+            placeholder="Buscar por tabla, operación o descripción..."
+        >
+    </div>
+
+    <!-- ===== TABLA DE HISTORIAL ===== -->
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Tabla</th>
+                    <th>Operación</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+
+            <tbody id="tablaHistorial">
+                <tr>
+                    <td colspan="4" class="empty-table">
+                        Todavía no hay datos cargados.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</section>

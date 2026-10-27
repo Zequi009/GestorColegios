@@ -1,0 +1,63 @@
+:root {
+    --color-bg: #d1d1d1;
+    --color-surface: #e2e2e2;
+    --color-surface-light: #c4c4c4;
+
+    --color-border: #a6a6a6;
+
+    --color-text: #353535;
+    --color-muted: #686868;
+
+    --color-accent: #555555;
+    --color-alert: #b44343;
+
+    --header-height: 56px;
+    --sidebar-width: 220px;
+    --sidebar-width-collapsed: 64px;
+
+    --color-chart-primary: #474bb6;
+    --color-chart-secondary: #599da1;
+    --color-chart-workspace-active: #26692a;
+    --color-chart-workspace-inactive: #d48020;
+    --color-chart-workspace-disabled: #b44343;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 400;
+    overflow: hidden;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+h1,
+h2,
+h3 {
+    font-family: inherit;
+    font-weight: 700;
+}
+
+.app-layout {
+    display: flex;
+    height: calc(100vh - var(--header-height));
+}
+
+.main-content {
+    flex: 1;
+    padding: 24px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: var(--color-bg);
+}

@@ -1,0 +1,185 @@
+.app-header {
+    height: var(--header-height);
+    display: grid;
+    grid-template-columns: minmax(40px, 1fr) minmax(0, 600px) minmax(40px, 1fr);
+    align-items: center;
+    gap: 16px;
+    padding: 0 16px;
+    background-color: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+}
+
+
+/*======== BOTONES DEL HEADER ========*/
+
+.header-button {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border: none;
+    border-radius: 8px;
+    background-color: transparent;
+    color: var(--color-text);
+    cursor: pointer;
+}
+
+.header-icon {
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-icon svg {
+    display: block;
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
+.app-header > .header-button:first-child {
+    justify-self: start;
+}
+
+.app-header > .header-button:last-child {
+    justify-self: end;
+}
+
+.header-button:hover {
+    background-color: var(--color-surface-light);
+}
+
+.header-button.active {
+    background-color: var(--color-surface-light);
+}
+
+
+/*======== BUSQUEDA GLOBAL ========*/
+
+.global-search {
+    position: relative;
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 12px;
+    height: 38px;
+
+    justify-self: center;
+
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+}
+
+.global-search input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: var(--color-text);
+    font-size: 14px;
+}
+
+.global-search input::placeholder {
+    color: var(--color-muted);
+}
+
+
+/*======== PANEL DE RESULTADOS ========*/
+
+.global-search-results {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+
+    width: 100%;
+    max-height: 400px;
+    overflow-y: auto;
+
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+
+    display: none;
+
+    z-index: 1000;
+}
+
+
+/*======== SECCIONES ========*/
+
+.global-search-section {
+    padding: 10px 12px 6px;
+    color: #000;
+    font-size: 12px;
+    position: relative;
+    font-size: 15px;
+
+}
+
+.global-search-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%; /* ancho que quieras */
+    border-bottom: 1px solid #c0c0c0;
+}
+
+.global-search-section:first-child {
+    border-top: none;
+}
+
+
+/*======== RESULTADOS ========*/
+
+.global-search-result {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    padding: 10px 12px;
+
+    cursor: pointer;
+}
+
+.global-search-result:hover {
+    background-color: var(--color-surface-light);
+}
+
+.global-search-result span {
+    color: var(--color-text);
+    font-size: 14px;
+}
+
+.global-search-result small {
+    color: var(--color-muted);
+    font-size: 12px;
+}
+
+
+/*======== SIN RESULTADOS ========*/
+
+.global-search-empty {
+    padding: 16px;
+
+    text-align: center;
+
+    color: var(--color-muted);
+}
+
+
+/*======== RESPONSIVE ========*/
+
+@media (max-width: 560px) {
+    .app-header {
+        grid-template-columns: 40px minmax(0, 1fr) 40px;
+        gap: 8px;
+        padding: 0 8px;
+    }
+}

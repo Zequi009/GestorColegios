@@ -1,0 +1,49 @@
+<section class="view">
+
+    <div class="view-header">
+        <div>
+            <h2>Base de datos</h2>
+            <p>Estado e información de la conexión de Dijini.</p>
+        </div>
+    </div>
+
+    <div class="database-info">
+
+        <div class="database-section">
+            <h3>Estado de conexión</h3>
+
+            <div class="database-status">
+                <span id="estadoBaseDatos" class="status-indicator comprobando"></span>
+
+                <span id="textoEstadoBaseDatos">
+                    Comprobando conexión...
+                </span>
+                <button id="btnReintentarBaseDatos" class="retry-database-button" type="button"
+                    aria-label="Reintentar conexión" hidden>
+                    <span class="material-symbols-outlined" aria-hidden="true">sync</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="database-section">
+            <h3>Información de conexión</h3>
+
+            <div class="database-detail">
+                <span>Base de datos:</span>
+                <strong id="nombreBaseDatos">---</strong>
+            </div>
+
+            <div class="database-detail">
+                <span>Motor:</span>
+                <strong>Microsoft SQL Server</strong>
+            </div>
+
+            <div class="database-detail">
+                <span>Versión:</span>
+                <strong id="versionMotorBaseDatos">---</strong>
+            </div>
+        </div>
+
+    </div>
+
+</section>

@@ -1,0 +1,149 @@
+<section class="view">
+
+    <div class="view-header view-header-actions">
+        <div>
+            <h2>Colegios</h2>
+            <p>Consulta y administración de colegios.</p>
+        </div>
+
+        <button class="primary-button" id="btnAgregarColegio">
+            + Agregar colegio
+        </button>
+    </div>
+
+    <!-- =====
+     BARRA DE BUSQUEDA
+     =====-->
+    <div class="view-toolbar">
+        <input type="text" id="buscarColegio" placeholder="Buscar por CUE, nombre o localidad...">
+    </div>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>CUE</th>
+                    <th>Nombre</th>
+                    <th>Localidad</th>
+                    <th>Departamento</th>
+                    <th>Teléfono</th>
+                    <th>N° de Computadoras </th>
+                    <th>Correo Alternativo</th>
+                    <th >Acciones</th>
+                </tr>
+            </thead>
+
+            <tbody id="tablaColegios">
+                <tr>
+                    <td colspan="7" class="empty-table">
+                        Todavía no hay datos cargados.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!--======== CAPA OSCURA DEL PANEL ======== -->
+    <div id="panelColegioOverlay" class="side-panel-overlay"></div>
+
+    <!--======== PANEL LATERA L======== -->
+    <aside id="panelColegio" class="side-panel">
+        <div class="side-panel-header">
+            <div>
+                <h3 id="panelColegioTitulo">Editar colegio</h3>
+                <p id="panelColegioTexto"></p>
+            </div>
+
+            <button id="btnCerrarPanelColegio" class="side-panel-close" type="button" aria-label="Cerrar panel">
+                ✕
+            </button>
+        </div>
+
+        <form id="formColegio" class="side-panel-form" novalidate>
+            <div class="form-field">
+                <label for="colegioCue">CUE</label>
+                <input id="colegioCue" name="cue" type="text" inputmode="numeric" pattern="[0-9]+" autocomplete="off" >
+                <small id="colegioCueAyuda" class="form-help"></small>
+            </div>
+
+            <div class="form-field">
+                <label for="colegioNombre">Nombre</label>
+                <input id="colegioNombre" name="nombre" type="text" maxlength="50" autocomplete="off">
+            </div>
+
+            <div class="form-field">
+                <label for="colegioLocalidad">Localidad</label>
+                <input id="colegioLocalidad" name="localidad" type="text" maxlength="50" autocomplete="off">
+            </div>
+
+            <div class="form-field">
+                <label for="colegioDepartamento">Departamento</label>
+                <input id="colegioDepartamento" name="departamento" type="text" maxlength="50" autocomplete="off">
+            </div>
+
+            <div class="form-field">
+                <label for="colegioTelefono">Teléfono</label>
+                <input id="colegioTelefono" name="telefono" type="tel" pattern="[0-9+() -]*" autocomplete="off">
+            </div>
+
+            <div class="form-field">
+                <label for="colegioNumeroComputadoras">Número de Computadoras</label>
+                <input type="text" id="colegioNumeroComputadoras" name="numeroComputadoras" inputmode="numeric"
+                    pattern="[0-9]*">
+            </div>
+
+            <div class="form-field">
+                <label for="colegioCorreo">Correo electrónico</label>
+                <input id="colegioCorreo" name="correo" type="email" maxlength="100" autocomplete="off">
+            </div>
+
+            <div class="side-panel-actions">
+                <button id="btnCancelarPanelColegio" class="secondary-button" type="button">
+                    Cancelar
+                </button>
+
+                <button class="primary-button" type="submit">
+                    Guardar
+                </button>
+            </div>
+            
+        </form>
+    </aside>
+
+    <div id="modalConfirmacionOverlay" class="modal-overlay"></div>
+
+<div id="modalConfirmacion" class="modal-confirmacion">
+    <div class="modal-contenido">
+
+        <h3 id="modalConfirmacionTitulo">
+            Confirmar acción
+        </h3>
+
+        <p id="modalConfirmacionTexto">
+            ¿Estás seguro de que querés continuar?
+        </p>
+
+        <div class="modal-acciones">
+
+            <button
+                id="btnCancelarConfirmacion"
+                class="secondary-button"
+                type="button"
+            >
+                Cancelar
+            </button>
+
+            <button
+                id="btnAceptarConfirmacion"
+                class="danger-button"
+                type="button"
+            >
+                Confirmar
+            </button>
+
+        </div>
+
+    </div>
+</div>
+
+</section>
